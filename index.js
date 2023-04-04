@@ -131,8 +131,8 @@ const postsRoutes = require('./routes/posts');
 
 const errorController = require('./controllers/error');
 
+const http = require('http')
 const http = require('https')
-
 const server = http.createServer((req,res) => {
     res.writeHead(200,{'content-type':'text/html'})
     res.write('<h1>home page </h1>')
