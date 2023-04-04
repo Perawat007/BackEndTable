@@ -131,7 +131,17 @@ const postsRoutes = require('./routes/posts');
 
 const errorController = require('./controllers/error');
 
-const cors = require('cors');
+const http = require('https')
+
+const server = http.createServer((req,res) => {
+    res.writeHead(200,{'content-type':'text/html'})
+    res.write('<h1>home page </h1>')
+    res.end()
+})
+
+server.listen(5000)
+
+/*const cors = require('cors');
 
 const app = express();
 
@@ -165,4 +175,4 @@ app.use(errorController.get500);
 
 app.listen(ports, () => console.log(`Listening on port... ${ports}`));
 
-httpsServer.listen(ports);
+httpsServer.listen(ports);*/
